@@ -1,41 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.37/moment-timezone-with-data-1970-2030.min.js"></script>
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Clock</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.37/moment-timezone-with-data-1970-2030.min.js"></script>
 </head>
 <body>
-    <div class="container">
-      <h1>World Clock</h1>
+  <div class="container">
+    <h1>World Clock</h1>
 
-      <select>
-        <option value="">Select a city..</option>
-        <option value="">London</option>
-        <option value="">New York</option>
-        <option value="">Auckland</option>
-      </select>
+    <select id="city-select">
+      <option value="">Select a city..</option>
+      <option value="America/Los_Angeles">Los Angeles 🇺🇸</option>
+      <option value="Europe/London">London 🇬🇧</option>
+      <option value="America/New_York">New York 🇺🇸</option>
+      <option value="Pacific/Auckland">Auckland 🇳🇿</option>
+      <option value="Australia/Sydney">Sydney 🇦🇺</option>
+      <option value="current">Your Location 🌎</option>
+    </select>
 
-      <div class="city">
+    <div id="default-cities">
+      <div class="city" id="los-angeles">
         <h2>Los Angeles 🇺🇸</h2>
-        <div class="date">August 15th 2022</div>
-        <div class="time">1:48:15 AM</div>
+        <div class="date"></div>
+        <div class="time"></div>
       </div>
-      <div class="city">
-        <h2>Sydney 🇦🇺</h2>
-        <div class="date">August 15th 2022</div>
-        <div class="time">1:48:15 AM</div>
+      <div class="city" id="london">
+        <h2>London 🇬🇧</h2>
+        <div class="date"></div>
+        <div class="time"></div>
+      </div>
+      <div class="city" id="auckland">
+        <h2>Auckland 🇳🇿</h2>
+        <div class="date"></div>
+        <div class="time"></div>
       </div>
     </div>
-    <footer>
-      This project was coded with ❤️ by Vuyelwa Mavuma  and is
-      <a href="https://github.com/Mavooma/world-wide-app" target="_blank">
-        open sourced on GitHub</a
-      >
-    </footer>
-    <script src="script.js"></script>
+
+    <div id="selected-city"></div>
+  </div>
+
+  <footer>
+    This project was coded with ❤️ by Vuyelwa Mavuma and is
+    <a href="https://github.com/Mavooma/world-wide-app" target="_blank">open sourced on GitHub</a>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
