@@ -49,6 +49,10 @@ function selectCity(event) {
 
   selectedCity = { tz, label };
 
+  // 👉 Alert with both city name & current time
+  let cityTime = moment().tz(tz).format("MMMM Do YYYY, h:mm:ss A");
+  alert(`You selected: ${label}\nCurrent time: ${cityTime}`);
+
   // Hide default clocks
   document.getElementById("default-cities").style.display = "none";
 
@@ -70,7 +74,7 @@ function selectCity(event) {
     selectedCity = null;
     container.style.display = "none";
     document.getElementById("default-cities").style.display = "block";
-    document.getElementById("city-select").value = ""; // Reset dropdown
+    document.getElementById("city-select").value = ""; // ✅ Reset dropdown to "Select a city.."
   });
 }
 
